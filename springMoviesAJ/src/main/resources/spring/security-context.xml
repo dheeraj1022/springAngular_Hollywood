@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+    xmlns:security="http://www.springframework.org/schema/security"
+    xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd  http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-4.0.xsd">
+          
+    
+    <security:authentication-manager>
+      <security:authentication-provider>
+          <security:user-service>
+				<security:user name="dheeraj" password="united1878"
+					authorities="admin" />
+			</security:user-service>
+         <security:jdbc-user-service data-source-ref="dataSource" users-by-username-query="select userName,password,true from User where userName=?"
+				authorities-by-username-query="select userName,authority from Authorities where userName=?"/> 
+      </security:authentication-provider>  
+    </security:authentication-manager>
+    
+    
+    <security:http auto-config="true" use-expressions="true">
+        <security:intercept-url pattern="/insert" access="isAuthenticated()"/>
+      <!--   <security:form-login login-page="/movieLogin"/> -->
+        <security:logout logout-success-url="/home"/>
+    </security:http>
+    
+    
+    
+</beans>
