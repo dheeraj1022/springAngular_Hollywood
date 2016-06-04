@@ -10,7 +10,16 @@ public class User {
 	String phone;
 	String age;
 	String sex;
+	String Authority;
 	
+	
+	
+	public String getAuthority() {
+		return Authority;
+	}
+	public void setAuthority(String authority) {
+		Authority = authority;
+	}
 	public String getSex() {
 		return sex;
 	}
