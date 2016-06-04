@@ -26,4 +26,9 @@ public class UserDaoImpl implements UserDao {
 		
 	}
 
+	public void updateuser(String username) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
