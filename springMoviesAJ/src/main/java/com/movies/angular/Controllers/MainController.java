@@ -19,7 +19,7 @@ public class MainController {
     public String getRegister() {
 		
 		
-        return "index";
+        return "home";
     }
 	
 	@RequestMapping(value="/insert")
