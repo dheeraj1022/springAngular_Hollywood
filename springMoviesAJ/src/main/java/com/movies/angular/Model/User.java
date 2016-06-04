@@ -9,7 +9,14 @@ public class User {
 	String email;
 	String phone;
 	String age;
+	String sex;
 	
+	public String getSex() {
+		return sex;
+	}
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
 	public String getAge() {
 		return age;
 	}
